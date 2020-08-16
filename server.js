@@ -19,11 +19,8 @@ db.mongoose
     process.exit();
   });
 
-var corsOptions = {
-  origin: "http://localhost:5000"
-};
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
