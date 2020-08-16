@@ -20,7 +20,7 @@ db.mongoose
   });
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:5000"
 };
 
 app.use(cors(corsOptions));
@@ -39,6 +39,8 @@ app.get("/", (req, res) => {
 
 
 // set port, listen for requests
+
+require("./app/routes/api.routes")(app);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
